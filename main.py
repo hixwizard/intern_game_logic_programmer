@@ -133,6 +133,8 @@ if __name__ == '__main__':
     data = 100000
     my_deque = MyDeque(data)
     my_deque.run()
+
+
 """
 Вопрос №3
 
