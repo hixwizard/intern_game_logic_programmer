@@ -105,13 +105,13 @@ class MyDeque(Decoder):
         start_time = time.time()
         data1 = []
         for data_index in range(self.data):
-            data1.insert(0, f'Элемент номер {data_index}')
+            data1.insert(0, data_index)
         first_answer: float = time.time() - start_time
 
         start_time = time.time()
         data2 = deque()
         for data_index in range(self.data):
-            data2.appendleft(f'Элемент номер {data_index}')
+            data2.appendleft(data_index)
         second_answer: float = time.time() - start_time
         return print(f'\nбез deque {first_answer}'
                      f' с использованием deque {second_answer}')
