@@ -157,7 +157,8 @@ def quicksort(data):
     Не только по скорости, но и по области применения.
     Средний случай:
     O(n log(n))
-    Список из 100 неотсортированных элементов ~ 0.00008 млсек
+    Массив из 100 неотсортированных элементов ~ 0.00008 млсек
+    Из 100000 неотсортированных элементов ~ 0.064 млсек
     """
     if len(data) < 2:
         return data
@@ -169,11 +170,17 @@ def quicksort(data):
 
 
 data = [random.randint(1, 1000) for _ in range(100)]
-
+data1 = [random.randint(1, 1000) for _ in range(100000)]
 
 start_time = time.time()
 sorted_data = quicksort(data)
 end_time = time.time()
 print('\nИсходный массив:', data)
 print("\nОтсортированный массив:", sorted_data)
-print(f"\nВремя сортировки для data: {end_time - start_time:.6f} секунд")
+print(f"\nВремя сортировки для data(100 элементов): {end_time - start_time:.6f} секунд")
+
+start_time = time.time()
+sorted_data = quicksort(data1)
+end_time = time.time()
+print(f"\nВремя сортировки для data1(100000 элементов): {end_time - start_time:.6f} секунд")
+
